@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "login":"be1",
+    "password":"be1",
+    "firstname":"Paul",
+    "lastname":"DURAND",
+    "role":"be"
+  },
+  {
+    "id": 2,
+    "login":"com1",
+    "password":"com1",
+    "firstname":"Jean",
+    "lastname":"DUPOND",
+    "role":"com"
+  }
+]

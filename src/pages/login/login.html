@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>MYAM</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-row>
+    <ion-col>
+      <form (submit)="doLogin()">
+        <ion-item [ngClass]="{'error':errorLogin}">
+          <ion-label stacked>
+            <ion-icon name="contact"></ion-icon>
+            Identifiant
+          </ion-label>
+          <ion-input type="text" name="login" [(ngModel)]="credentials.login"></ion-input>
+        </ion-item>
+        <ion-item [ngClass]="{'error':errorLogin}">
+          <ion-label stacked>
+            <ion-icon name="lock"></ion-icon>
+            Mot de passe
+          </ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="credentials.password"></ion-input>
+        </ion-item>
+        <button ion-button type="submit">Connexion</button>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-content>

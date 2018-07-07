@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ajout de devis</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form (submit)="addDevis()">
+    <ion-item>
+      <ion-label stacked>
+        Nom du devis
+      </ion-label>
+      <ion-input type="text" name="nomDevis" [(ngModel)]="newDevis.nomDevis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        Nom du client
+      </ion-label>
+      <ion-input type="text" name="nomClient" [(ngModel)]="newDevis.client.nomClient"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        Prénom du client
+      </ion-label>
+      <ion-input type="text" name="nomClient" [(ngModel)]="newDevis.client.prenomClient"></ion-input>
+    </ion-item>
+    <ion-item *ngFor="let item of nbComposants">
+      <ion-label stacked>
+        Composants {{item.nb}}
+      </ion-label>
+      <span></span>
+      <ion-select name="">
+        <ion-option *ngFor="let composant of composantList" (ionSelect)="addPrice(composant.prixComposant)">
+          {{ composant.nomComposant }}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button type="button" (tap)="addComposant()">+</button>
+    <ion-item>
+      <ion-label>Prix : {{newDevis.prixDevis }} €</ion-label>
+    </ion-item>
+    <button ion-button type="submit">Ajouter</button>
+  </form>
+</ion-content>

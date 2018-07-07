@@ -1,0 +1,32 @@
+[
+  {
+    "idDevis":1,
+    "nomDevis":"Maison bois de Cèdre",
+    "client":{
+      "idClient":3,
+      "nomClient":"GARCIN",
+      "prenomClient":"Lazare",
+      "adrClient":"2 Rue de la grange aux moines",
+      "telClient":"02 55 28 65 95",
+      "emailClient":"jdupont@mail.fr"
+    },
+    "dateDevis":"2018-03-07",
+    "etatDevis":"En attente",
+    "prixDevis":255000
+  },
+  {
+    "idDevis":2,
+    "nomDevis":"Maison bois de Chêne",
+    "client":{
+      "idClient":2,
+      "nomClient":"TELMAET",
+      "prenomClient":"Louise",
+      "adrClient":"17 rue du filmographe",
+      "telClient":"02 55 29 75 95",
+      "emailClient":"telmaetlouise@mail.fr"
+    },
+    "dateDevis":"2018-03-07",
+    "etatDevis":"Validé",
+    "prixDevis":256050
+  }
+]

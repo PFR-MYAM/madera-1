@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+
+  thead {
+    background-color: #CCCCCC;
+    text-align: left;
+    tr {
+      height: 30px;
+      border-bottom: 3px solid #000000;
+    }
+  }
+
+  tbody {
+    tr {
+      height: 45px;
+      border-bottom: 1px solid #000000;
+    }
+  }
+}
+
+.error {
+  .toast-container {
+    background-color: #f30d0d;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+button.button.btn-pink {
+  background-color: #CCCCCC;
+  color: #2d2d2d;
+}

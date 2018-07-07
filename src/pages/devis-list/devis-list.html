@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Gestion des devis</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button type="button" [navPush]="devisFormPage" [navParams]="{idDevis:allDevis.length + 1}">Ajouter un devis</button>
+  <table *ngIf="allDevis.length > 0">
+    <thead>
+      <tr>
+        <th>Numéro</th>
+        <th>Nom</th>
+        <th>Client</th>
+        <th>Etat</th>
+        <th>Prix</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let devis of allDevis">
+        <td>{{devis.idDevis}}</td>
+        <td>{{devis.nomDevis}}</td>
+        <td>{{devis.client.nomClient}} {{devis.client.prenomClient}}</td>
+        <td>{{devis.etatDevis}}</td>
+        <td>{{devis.prixDevis}} €</td>
+        <td *ngIf="devis.etatDevis === 'Validé'">&nbsp;</td>
+        <td *ngIf="devis.etatDevis != 'Validé'">
+          <button ion-button type="button" icon-only (tap)="devis.etatDevis = 'Validé'">
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ion-card *ngIf="allDevis.length === 0">
+    <ion-card-content>
+      Aucun devis enregistré
+    </ion-card-content>
+  </ion-card>
+</ion-content>

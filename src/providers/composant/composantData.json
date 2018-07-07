@@ -1,0 +1,45 @@
+[
+    {
+      "idComposant":1,
+      "nomComposant":"Maison bois de Cèdre",
+      "gammeComposant":"luxe",
+      "fournisseurComposant":"test",
+      "prixComposant": 3000
+    },
+    {
+			"idComposant":1,
+			"nomComposant":"Maison bois de Cèdre",
+      "gammeComposant":"luxe",
+			"fournisseurComposant":"test",
+			"prixComposant": 3000
+		},
+		{
+			"idComposant":1,
+			"nomComposant":"Maison bois de Cèdre",
+      "gammeComposant":"luxe",
+			"fournisseurComposant":"test",
+			"prixComposant": 3000
+		},
+		{
+			"idComposant":1,
+			"nomComposant":"Maison bois de Cèdre",
+      "gammeComposant":"luxe",
+			"fournisseurComposant":"test",
+			"prixComposant": 3000
+		},
+		{
+			"idComposant":1,
+			"nomComposant":"Maison bois de Cèdre",
+      "gammeComposant":"luxe",
+			"fournisseurComposant":"test",
+			"prixComposant": 3000
+		},
+		{
+			"idComposant":1,
+			"nomComposant":"Maison bois de Cèdre",
+      "gammeComposant":"luxe",
+			"fournisseurComposant":"test",
+			"prixComposant": 3000
+		}
+  ]
+  
