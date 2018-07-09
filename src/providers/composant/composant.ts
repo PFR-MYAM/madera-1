@@ -24,7 +24,7 @@ export class ComposantProvider {
     });
   }
 
-  addNewDevis(composant) {
+  addNewComposant(composant) {
     composantData.push(composant);
   }
 }

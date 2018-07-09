@@ -7,12 +7,36 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>composant-form</ion-title>
+    <ion-title>Ajout de composant</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
-
+  <form (submit)="addComposant()">
+    <ion-item>
+      <ion-label stacked>
+        Nom du composant
+      </ion-label>
+      <ion-input type="text" name="nomComposant" [(ngModel)]="newComposant.nomComposant"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        Gamme du composant
+      </ion-label>
+      <ion-input type="text" name="gammeComposant" [(ngModel)]="newComposant.gammeComposant"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        Fournisseur du composant
+      </ion-label>
+      <ion-input type="text" name="fournisseurComposant" [(ngModel)]="newComposant.fournisseurComposant"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        Prix du composant
+      </ion-label>
+      <ion-input type="number" name="prixComposant" [(ngModel)]="newComposant.prixComposant"></ion-input>
+    </ion-item>
+    <button ion-button type="submit">Ajouter</button>
+  </form>
 </ion-content>

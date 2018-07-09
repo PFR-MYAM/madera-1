@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
-/**
- * Generated class for the ComposantFormPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ComposantProvider } from "../../providers/composant/composant";
 
 @IonicPage()
 @Component({
@@ -15,11 +10,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ComposantFormPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  newComposant: any = {
+    idComposant: 0,
+    nomComposant: '',
+    gammeComposant: '',
+    fournisseurComposant: '',
+    prixComposant: ''
+  };
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public composantService: ComposantProvider) {
+    this.newComposant.idComposant = navParams.get('idComposant');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ComposantFormPage');
+  }
+
+  addComposant() {
+    this.composantService.addNewComposant(this.newComposant);
+    this.navCtrl.pop();
   }
 
 }

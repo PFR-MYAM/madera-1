@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, Events } from 'ionic-angular';
 
+import { ComposantFormPage } from "../composant-form/composant-form";
+
 import { ComposantProvider } from "../../providers/composant/composant";
 
 @Component({
@@ -9,6 +11,7 @@ import { ComposantProvider } from "../../providers/composant/composant";
 })
 export class ComposantsListPage {
   allComposant: any = [];
+  composantFormPage = ComposantFormPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public composantServ: ComposantProvider, public events: Events) {
     this.events.subscribe('composant:added', (composant) => {

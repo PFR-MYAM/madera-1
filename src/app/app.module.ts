@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { DevisListPage } from "../pages/devis-list/devis-list";
 import { DevisFormPage } from "../pages/devis-form/devis-form";
 import { ComposantsListPage } from "../pages/composants-list/composants-list";
+import { ComposantFormPage } from "../pages/composant-form/composant-form";
 
 import { UserProvider } from '../providers/user/user';
 import { DevisProvider } from '../providers/devis/devis';
@@ -21,7 +22,8 @@ import { ComposantProvider } from '../providers/composant/composant';
     LoginPage,
     DevisListPage,
     DevisFormPage,
-    ComposantsListPage
+    ComposantsListPage,
+    ComposantFormPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { ComposantProvider } from '../providers/composant/composant';
     LoginPage,
     DevisListPage,
     DevisFormPage,
-    ComposantsListPage
+    ComposantsListPage,
+    ComposantFormPage
   ],
   providers: [
     StatusBar,
