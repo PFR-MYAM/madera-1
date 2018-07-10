@@ -1,25 +1,49 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 
-/**
- * Generated class for the DevisDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import moment from 'moment';
+import 'moment/locale/fr';
 
-@IonicPage()
+import {DevisProvider} from "../../providers/devis/devis";
+import {ComposantProvider} from "../../providers/composant/composant"
+
 @Component({
   selector: 'page-devis-detail',
   templateUrl: 'devis-detail.html',
 })
 export class DevisDetailPage {
+  
+  allDevis: any = [];
+  devis: any = {
+    idDevis: 0,
+    nomDevis: '',
+    client: {
+      nomClient: '',
+      prenomClient:''
+    },
+    dateDevis: moment().format('YYYY-MM-DD'),
+    etatDevis: 'En attente',
+    prixDevis: 0
+  };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public devisService: DevisProvider, public composantService: ComposantProvider) {
+    this.devis.idDevis = navParams.get('idDevis');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DevisDetailPage');
+    this.getDevis(this.devis.idDevis);
   }
 
+  getDevis(idDevis) {
+    this.devisService.getOne(idDevis).then((res) => {
+      this.devis = res;
+    }, (err) => {
+      console.log(err);
+    });
+  }
+
+  updateDevis() {
+    this.devisService.updateDevis(this.devis);
+    this.navCtrl.pop();
+  }
 }

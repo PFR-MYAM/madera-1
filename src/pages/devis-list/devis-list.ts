@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, Events } from 'ionic-angular';
 
 import { DevisFormPage } from "../devis-form/devis-form";
+import { DevisDetailPage } from "../devis-detail/devis-detail";
 
 import { DevisProvider } from "../../providers/devis/devis";
 
@@ -12,6 +13,7 @@ import { DevisProvider } from "../../providers/devis/devis";
 export class DevisListPage {
   allDevis: any = [];
   devisFormPage = DevisFormPage;
+  devisDetailPage = DevisDetailPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public devisServ: DevisProvider, public events: Events) {
     this.events.subscribe('devis:added', (devis) => {

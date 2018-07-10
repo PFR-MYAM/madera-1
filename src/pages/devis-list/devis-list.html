@@ -27,7 +27,7 @@
           <button *ngIf="devis.etatDevis != 'Validé'" ion-button type="button" icon-only (tap)="devis.etatDevis = 'Validé'">
             <ion-icon name="checkmark"></ion-icon>
           </button>
-          <button ion-button type="button" [navPush]="composantDetailPage" [navParams]="{idDevis:devis.idDevis}">
+          <button ion-button type="button" [navPush]="devisDetailPage" [navParams]="{idDevis:devis.idDevis}">
             <ion-icon name="brush"></ion-icon>
           </button>
           <button ion-button type="button" (click)="deleteDevis(devis.idDevis)">

@@ -23,11 +23,24 @@ export class DevisProvider {
     });
   }
 
+  getOne(idDevis) {
+    return new Promise((resolve, reject) => {
+      resolve(devisDatas.find(item => item.idDevis === idDevis));
+    });
+  }
+
   addNewDevis(devis) {
     devisDatas.push(devis);
   }
 
   deleteDevis(idDevis) {
     devisDatas.splice(idDevis, 1);
+  }
+
+  updateDevis(composant) {
+    devisDatas[composant.idComposant-1].nomComposant = composant.nomComposant;
+    devisDatas[composant.idComposant-1].gammeComposant = composant.gammeComposant;
+    devisDatas[composant.idComposant-1].fournisseurComposant = composant.fournisseurComposant;
+    devisDatas[composant.idComposant-1].prixComposant = composant.prixComposant;
   }
 }
