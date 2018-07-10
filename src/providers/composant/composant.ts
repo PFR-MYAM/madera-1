@@ -35,6 +35,6 @@ export class ComposantProvider {
   }
 
   deleteComposant(idComposant) {
-    composantData.slice(idComposant, 1);
+    composantData.splice(idComposant, 1);
   }
 }

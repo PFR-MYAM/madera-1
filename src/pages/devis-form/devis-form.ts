@@ -4,7 +4,7 @@ import { NavController, NavParams, Events } from 'ionic-angular';
 import moment from 'moment';
 import 'moment/locale/fr';
 import {DevisProvider} from "../../providers/devis/devis";
-import {ComposantProvider} from "../../providers/composant/composant"
+//import {ComposantProvider} from "../../providers/composant/composant"
 
 @Component({
   selector: 'page-devis-form',
