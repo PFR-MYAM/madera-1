@@ -37,4 +37,11 @@ export class ComposantProvider {
   deleteComposant(idComposant) {
     composantData.splice(idComposant, 1);
   }
+
+  updateComposant(composant) {
+    composantData[composant.idComposant-1].nomComposant = composant.nomComposant;
+    composantData[composant.idComposant-1].gammeComposant = composant.gammeComposant;
+    composantData[composant.idComposant-1].fournisseurComposant = composant.fournisseurComposant;
+    composantData[composant.idComposant-1].prixComposant = composant.prixComposant;
+  }
 }

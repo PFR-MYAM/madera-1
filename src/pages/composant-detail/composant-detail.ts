@@ -33,4 +33,9 @@ export class ComposantDetailPage {
       console.log(err);
     });
   }
+
+  updateComposant() {
+    this.composantService.updateComposant(this.composant);
+    this.navCtrl.pop();
+  }
 }
