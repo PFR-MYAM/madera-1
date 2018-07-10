@@ -30,4 +30,9 @@ export class DevisListPage {
       console.log(err);
     });
   }
+
+  deleteDevis(idDevis) {
+    idDevis = idDevis-1;
+    this.devisServ.deleteDevis(idDevis);
+  }
 }

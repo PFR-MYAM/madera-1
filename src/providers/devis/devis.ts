@@ -26,4 +26,8 @@ export class DevisProvider {
   addNewDevis(devis) {
     devisDatas.push(devis);
   }
+
+  deleteDevis(idDevis) {
+    devisDatas.splice(idDevis, 1);
+  }
 }

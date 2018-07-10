@@ -1,42 +1,42 @@
 [
 	{
 		"idComposant":1,
-		"nomComposant":"Maison bois de Cèdre1",
+		"nomComposant":"Toiture hêtre",
 		"gammeComposant":"luxe",
 		"fournisseurComposant":"test",
 		"prixComposant": 3000
 	},
 	{
 		"idComposant":2,
-		"nomComposant":"Maison bois de Cèdre2",
+		"nomComposant":"Toiture bois de chêne",
 		"gammeComposant":"luxe",
 		"fournisseurComposant":"test",
 		"prixComposant": 3000
 	},
 	{
 		"idComposant":3,
-		"nomComposant":"Maison bois de Cèdre3",
+		"nomComposant":"Mur extérieur bois de hêtre",
 		"gammeComposant":"luxe",
 		"fournisseurComposant":"test",
 		"prixComposant": 3000
 	},
 	{
 		"idComposant":4,
-		"nomComposant":"Maison bois de Cèdre4",
+		"nomComposant":"Mur extérieur bois de chêne",
 		"gammeComposant":"luxe",
 		"fournisseurComposant":"test",
 		"prixComposant": 3000
 	},
 	{
 		"idComposant":5,
-		"nomComposant":"Maison bois de Cèdre5",
+		"nomComposant":"Escalier bois de hêtre",
 		"gammeComposant":"luxe",
 		"fournisseurComposant":"test",
 		"prixComposant": 3000
 	},
 	{
 		"idComposant":6,
-		"nomComposant":"Maison bois de Cèdre6",
+		"nomComposant":"Escalier bois de chêne",
 		"gammeComposant":"luxe",
 		"fournisseurComposant":"test",
 		"prixComposant": 3000

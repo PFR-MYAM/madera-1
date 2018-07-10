@@ -23,10 +23,15 @@
         <td>{{devis.client.nomClient}} {{devis.client.prenomClient}}</td>
         <td>{{devis.etatDevis}}</td>
         <td>{{devis.prixDevis}} €</td>
-        <td *ngIf="devis.etatDevis === 'Validé'">&nbsp;</td>
-        <td *ngIf="devis.etatDevis != 'Validé'">
-          <button ion-button type="button" icon-only (tap)="devis.etatDevis = 'Validé'">
+        <td>
+          <button *ngIf="devis.etatDevis != 'Validé'" ion-button type="button" icon-only (tap)="devis.etatDevis = 'Validé'">
             <ion-icon name="checkmark"></ion-icon>
+          </button>
+          <button ion-button type="button" [navPush]="composantDetailPage" [navParams]="{idDevis:devis.idDevis}">
+            <ion-icon name="brush"></ion-icon>
+          </button>
+          <button ion-button type="button" (click)="deleteDevis(devis.idDevis)">
+            <ion-icon name="trash"></ion-icon>
           </button>
         </td>
       </tr>

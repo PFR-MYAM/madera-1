@@ -4,7 +4,7 @@ import { NavController, NavParams, Events } from 'ionic-angular';
 import moment from 'moment';
 import 'moment/locale/fr';
 import {DevisProvider} from "../../providers/devis/devis";
-//import {ComposantProvider} from "../../providers/composant/composant"
+import {ComposantProvider} from "../../providers/composant/composant"
 
 @Component({
   selector: 'page-devis-form',
@@ -28,70 +28,22 @@ export class DevisFormPage {
   // composantList : any = []
   // comosantList= ComposantProvider.getAll()
 
-  composantList: any = [
-    {
-      nomComposant: "Toiture ardoise",
-      prixComposant: 3000
-    },
-    {
-      nomComposant: "Toiture bois chêne",
-      prixComposant: 3500
-    },
-    {
-      nomComposant: "Toiture bois hêtre",
-      prixComposant: 4000
-    },
-    {
-      nomComposant: 'Mur exterieur bois chêne',
-      prixComposant: 2500
-    },
-    {
-      nomComposant: "Mur bois exterieur hêtre",
-      prixComposant: 3000
-    },
-    {
-      nomComposant: "Mur interieur bois chêne",
-      prixComposant: 2350
-    },
-    {
-      nomComposant: "Escalier bois chêne",
-      prixComposant: 1500
-    },
-    {
-      nomComposant: "Escalier bois hêtre",
-      prixComposant: 2350
-    },
-    {
-      nomComposant: "Lisses bas bois chêne",
-      prixComposant: 2350
-    },
-    {
-      nomComposant: "Lisse haut bois chêne",
-      prixComposant: 2350
-    },
-    {
-      nomComposant: "Lisses bas bois hêtre",
-      prixComposant: 2350
-    },
-    {
-      nomComposant: "Lisse haut bois hêtre",
-      prixComposant: 2350
-    },
-    {
-      nomComposant: "Montant verticaux bois chêne",
-      prixComposant: 2350
-    },
-    {
-      nomComposant: "Montant verticaux bois chêne",
-      prixComposant: 2350
-    }
-  ];
+  composantList: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public devisService: DevisProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public devisService: DevisProvider, public composantService: ComposantProvider) {
     this.newDevis.idDevis = navParams.get('idDevis');
   }
 
   ionViewDidLoad() {
+    this.getAllComposant();
+  }
+
+  getAllComposant() {
+    this.composantService.getAll().then((res) => {
+      this.composantList = res;
+    }, (err) => {
+      console.log(err);
+    });
   }
 
   addComposant() {

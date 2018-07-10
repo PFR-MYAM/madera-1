@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { DevisListPage } from "../pages/devis-list/devis-list";
 import { DevisFormPage } from "../pages/devis-form/devis-form";
+import { DevisDetailPage } from "../pages/devis-detail/devis-detail";
 import { ComposantsListPage } from "../pages/composants-list/composants-list";
 import { ComposantFormPage } from "../pages/composant-form/composant-form";
 import { ComposantDetailPage } from "../pages/composant-detail/composant-detail";
@@ -23,6 +24,7 @@ import { ComposantProvider } from '../providers/composant/composant';
     LoginPage,
     DevisListPage,
     DevisFormPage,
+    DevisDetailPage,
     ComposantsListPage,
     ComposantFormPage,
     ComposantDetailPage
@@ -37,6 +39,7 @@ import { ComposantProvider } from '../providers/composant/composant';
     LoginPage,
     DevisListPage,
     DevisFormPage,
+    DevisDetailPage,
     ComposantsListPage,
     ComposantFormPage,
     ComposantDetailPage
