@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import {  NavController, NavParams, Events } from 'ionic-angular';
 
 import { ComposantProvider } from "../../providers/composant/composant";
 
-@IonicPage()
 @Component({
   selector: 'page-composant-form',
   templateUrl: 'composant-form.html',

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, Events } from 'ionic-angular';
 
 import { ComposantFormPage } from "../composant-form/composant-form";
+import { ComposantDetailPage } from "../composant-detail/composant-detail";
 
 import { ComposantProvider } from "../../providers/composant/composant";
 
@@ -12,6 +13,7 @@ import { ComposantProvider } from "../../providers/composant/composant";
 export class ComposantsListPage {
   allComposant: any = [];
   composantFormPage = ComposantFormPage;
+  composantDetailPage = ComposantDetailPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public composantServ: ComposantProvider, public events: Events) {
     this.events.subscribe('composant:added', (composant) => {
@@ -29,5 +31,11 @@ export class ComposantsListPage {
     }, (err) => {
       console.log(err);
     });
+  }
+
+  delete(idComposant) {
+    console.log(idComposant);
+    idComposant = idComposant-1;
+    this.composantServ.deleteComposant(idComposant);
   }
 }

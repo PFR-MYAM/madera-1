@@ -24,7 +24,17 @@ export class ComposantProvider {
     });
   }
 
+  getOne(idComposant) {
+    return new Promise((resolve, reject) => {
+      resolve(composantData.find(item => item.idComposant === idComposant));
+    });
+  }
+
   addNewComposant(composant) {
     composantData.push(composant);
+  }
+
+  deleteComposant(idComposant) {
+    composantData.slice(idComposant, 1);
   }
 }
