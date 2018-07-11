@@ -45,5 +45,6 @@ export class DevisDetailPage {
   updateDevis() {
     this.devisService.updateDevis(this.devis);
     this.navCtrl.pop();
+    console.log('devis');
   }
 }
