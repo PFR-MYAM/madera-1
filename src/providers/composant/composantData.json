@@ -80,13 +80,15 @@
 		"idComposant":12,
 		"nomComposant":"Fondation hêtre 1m2",
 		"gammeComposant":"luxe",
-		"fournisseurComposant":80
+		"fournisseurComposant":"test",
+		"prixComposant":80
 	},
 	{
 		"idComposant":13,
 		"nomComposant":"Fondation chêne 1m2",
 		"gammeComposant":"luxe",
-		"fournisseurComposant":78
+		"fournisseurComposant":"test",
+		"prixComposant":78
 	}
 ]
   

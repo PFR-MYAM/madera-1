@@ -69,12 +69,6 @@ export class DevisDetailPage {
 
   addComposantInDevis(composant, item) {
     let keyItem = _.indexOf(this.composantsDevis, item);
-    let oldComposant = _.find(this.composantList, function(c) {
-      let composant = c;
-      return item.composant.idComposant === composant.idComposant;
-    });
-    //changement du prix retrait du prix de l'ancien composant x sa quantite
-    this.devis.prixDevis = this.devis.prixDevis - (oldComposant.prixComposant * item.composant.quantite);
     // Changement de la valeur dans la collection des composants du devis
     this.composantsDevis[keyItem] = {
       nb: item.nb,
@@ -84,19 +78,28 @@ export class DevisDetailPage {
       }
     };
 
-    this.addPrice(composant.idComposant, 1);
+    this.changePrice();
+
   }
 
-  addPrice(idComposant, quantite) {
-    let composant = _.find(this.composantList, function(c) {
-      let comp = c;
-      return idComposant === comp.idComposant;
+  // changement du prix en fonction de la quantite de composant choisi et du status du changement (ajout, retrait)
+  changePrice() {
+    this.devis.prixDevis = 0;
+    _.each(this.composantsDevis, function(v){
+      let composant = _.find(this.composantList, function(c) {
+        let composant = c;
+        return composant.idComposant == v.composant.idComposant;
+      });
+      console.log(this.devis.prixDevis, composant);
+      this.devis.prixDevis = this.devis.prixDevis + (composant.prixComposant * v.composant.quantite);
+    }, this);
+  }
+
+  addComposant() {
+    this.composantsDevis.push({
+      nb: this.composantsDevis.length+1,
+      composant: {}
     });
-
-    //si la quantite est différente de 1 alors on lui retire 1 pour ne pas compter le prix ajouter au choix du composant
-    quantite = (quantite != 1 ? quantite-1: quantite);
-
-    this.devis.prixDevis = this.devis.prixDevis + (composant.prixComposant * quantite);
   }
 
   updateDevis() {

@@ -59,7 +59,7 @@
           </ion-select>
         </ion-item>
       </ion-col>
-      <ion-col col-md-6 col-sm-6 col-xs-12>
+      <ion-col col-md-4 col-sm-4 col-xs-12>
         <ion-item>
           <ion-label stacked>
             Quantité
@@ -68,7 +68,7 @@
             name="{{'quantiteComposant'+item.nb}}"
             [(ngModel)]="item.composant.quantite" 
             type="number"
-            (ionChange)="addPrice(item.composant.idComposant, item.composant.quantite)"  
+            (ionChange)="changePrice()"
           ></ion-input>
         </ion-item>
       </ion-col>
