@@ -105,6 +105,26 @@ export class DevisDetailPage {
     });
   }
 
+  deleteComposant(item){
+    let devisC = _.filter(this.composantsDevis, function(v){
+      let valeur = v;
+      return valeur.nb > item.nb;
+    });
+    if(devisC.length > 0) {
+      _.each(devisC, function(v) {
+        let valeur = v;
+        let keyItem = _.indexOf(this.composantsDevis, function(c) {
+          let composant = c;
+          return composant.nb === valeur.nb;
+        });
+        this.composantsDevis[keyItem].nb -= 1;
+      }, this);
+    }
+    this.composantsDevis = _.without(this.composantsDevis, item);
+
+    this.changePrice();
+  }
+
   updateDevis() {
     this.devis.composants = [];
     _.each(this.composantsDevis, function(v) {
