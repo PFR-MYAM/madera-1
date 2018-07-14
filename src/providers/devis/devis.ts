@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 declare function require(name:string);
 
 let devisDatas: any = require('./devisData.json');
@@ -21,6 +21,15 @@ export class DevisProvider {
       } else {
         reject({status:500, message:'Error server'});
       }
+            /**
+       * let url = '';
+       * this.httpClient.get(url, {}).subscribe(res => {
+       *  resolve(res);
+       * }, (err) => {
+       *  reject(err);
+       * });
+       */
+
     });
   }
 
@@ -30,11 +39,13 @@ export class DevisProvider {
       // A utiliser avec une api
       /**
        * let url = '';
-       * this.httpClient.get(url, {}).subscribe(res => {
+       * let params = HttpParams()
+       *  .set('idDevis', idDevis);
+       * this.httpClient.get(url, {params: params}).subscribe(res => {
        *  resolve(res);
        * }, (err) => {
        *  reject(err);
-       * })
+       * });
        */
     });
   }
@@ -42,12 +53,26 @@ export class DevisProvider {
   addNewDevis(devis) {
     devisDatas.push(devis);
     /**
-     * 
+     * let url = '';
+     * this.httpClient.post(url, JSON.stringify(devis), {}).subscribe(res => {
+     *  resolve(res);
+     * }, (err) => {
+     *  reject(err);
+     * });
      */
   }
 
   deleteDevis(idDevis) {
     devisDatas.splice(idDevis, 1);
+    /**
+     * let url = '';
+     * let param = HttpParams().set('idDevis', idDevis);
+     * this.httpClient.delete(url, {params:params}).subscribe(res => {
+     *  resolve(res);
+     * }, (err) => {
+     *  reject(err);
+     * });
+     */
   }
 
   updateDevis(composant) {
@@ -56,5 +81,13 @@ export class DevisProvider {
     devisDatas[composant.idComposant-1].fournisseurComposant = composant.fournisseurComposant;
     devisDatas[composant.idComposant-1].prixComposant = composant.prixComposant;*/
     console.log(composant);
+    /**
+     * let url = '';
+     * this.httpClient.put(url, JSON.stringify(devis), {}).subscribe(res => {
+     *  resolve(res);
+     * }, (err) => {
+     *  reject(err);
+     * });
+     */
   }
 }
