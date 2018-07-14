@@ -98,11 +98,19 @@ export class DevisDetailPage {
   addComposant() {
     this.composantsDevis.push({
       nb: this.composantsDevis.length+1,
-      composant: {}
+      composant: {
+        idComposant: 0,
+        quantite:0
+      }
     });
   }
 
   updateDevis() {
+    this.devis.composants = [];
+    _.each(this.composantsDevis, function(v) {
+      let composant = v.composant;
+      this.devis.composants.push(composant);
+    }, this);
     this.devisService.updateDevis(this.devis);
     this.navCtrl.pop();
   }
