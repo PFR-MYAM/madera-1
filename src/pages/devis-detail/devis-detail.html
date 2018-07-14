@@ -51,7 +51,7 @@
           <ion-select name="">
             <ion-option 
               *ngFor="let composant of composantList" 
-              (ionSelect)="addPrice(composant.prixComposant)"
+              (ionSelect)="addComposantInDevis(composant, item)"
               [selected]="composant.idComposant === item.composant.idComposant"
             >
               {{ composant.nomComposant }}
@@ -67,12 +67,18 @@
           <ion-input 
             name="{{'quantiteComposant'+item.nb}}"
             [(ngModel)]="item.composant.quantite" 
-            type="number"></ion-input>
+            type="number"
+            (ionChange)="addPrice(item.composant.idComposant, item.composant.quantite)"  
+          ></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
     <button ion-button type="button" (tap)="addComposant()">+</button>
-    <ion-label>Prix : {{devis.prixDevis }} €</ion-label>
+    <ion-item>
+      <ion-label stacked>Prix</ion-label>
+      <ion-input type="number" name="prixDevis" [(ngModel)]="devis.prixDevis" readonly></ion-input>
+      <ion-label>€</ion-label>
+    </ion-item>
     <button *ngIf="devis.etatDevis != 'Validé'" ion-button type="button" icon-only (tap)="devis.etatDevis = 'Validé'">
       <ion-icon name="checkmark"></ion-icon>
     </button>

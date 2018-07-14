@@ -67,6 +67,38 @@ export class DevisDetailPage {
     }, this);
   }
 
+  addComposantInDevis(composant, item) {
+    let keyItem = _.indexOf(this.composantsDevis, item);
+    let oldComposant = _.find(this.composantList, function(c) {
+      let composant = c;
+      return item.composant.idComposant === composant.idComposant;
+    });
+    //changement du prix retrait du prix de l'ancien composant x sa quantite
+    this.devis.prixDevis = this.devis.prixDevis - (oldComposant.prixComposant * item.composant.quantite);
+    // Changement de la valeur dans la collection des composants du devis
+    this.composantsDevis[keyItem] = {
+      nb: item.nb,
+      composant: {
+        idComposant: composant.idComposant,
+        quantite:1
+      }
+    };
+
+    this.addPrice(composant.idComposant, 1);
+  }
+
+  addPrice(idComposant, quantite) {
+    let composant = _.find(this.composantList, function(c) {
+      let comp = c;
+      return idComposant === comp.idComposant;
+    });
+
+    //si la quantite est différente de 1 alors on lui retire 1 pour ne pas compter le prix ajouter au choix du composant
+    quantite = (quantite != 1 ? quantite-1: quantite);
+
+    this.devis.prixDevis = this.devis.prixDevis + (composant.prixComposant * quantite);
+  }
+
   updateDevis() {
     this.devisService.updateDevis(this.devis);
     this.navCtrl.pop();
