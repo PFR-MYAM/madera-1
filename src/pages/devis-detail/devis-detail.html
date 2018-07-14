@@ -41,21 +41,23 @@
       </ion-label>
       <ion-input type="text" name="emailClient" [(ngModel)]="devis.client.emailClient"></ion-input>
     </ion-item>
-    <ion-item *ngFor="let item of nbComposants">
+    <ion-item *ngFor="let item of composantsDevis">
       <ion-label stacked>
-        Composantss {{item.nb}}
+        Composants {{item.nb}}
       </ion-label>
       <span></span>
       <ion-select name="">
-        <ion-option *ngFor="let composant of composantList" (ionSelect)="addPrice(composant.prixComposant)">
+        <ion-option 
+          *ngFor="let composant of composantList" 
+          (ionSelect)="addPrice(composant.prixComposant)"
+          [selected]="composant.idComposant === item.composant.idComposant"
+        >
           {{ composant.nomComposant }}
         </ion-option>
       </ion-select>
     </ion-item>
     <button ion-button type="button" (tap)="addComposant()">+</button>
-    <ion-item>
-      <ion-label>Prix : {{devis.prixDevis }} €</ion-label>
-    </ion-item>
+    <ion-label>Prix : {{devis.prixDevis }} €</ion-label>
     <button *ngIf="devis.etatDevis != 'Validé'" ion-button type="button" icon-only (tap)="devis.etatDevis = 'Validé'">
       <ion-icon name="checkmark"></ion-icon>
     </button>

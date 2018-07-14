@@ -1,18 +1,48 @@
 [
   {
     "idDevis":1,
-    "nomDevis":"Maison bois de Cèdre",
+    "nomDevis":"Maison bois de Hêtre",
     "client":{
       "idClient":3,
       "nomClient":"GARCIN",
       "prenomClient":"Lazare",
       "adrClient":"2 Rue de la grange aux moines",
       "telClient":"02 55 28 65 95",
-      "emailClient":"jdupont@mail.fr"
+      "emailClient":"glazare@mail.fr"
     },
     "dateDevis":"2018-03-07",
     "etatDevis":"En attente",
-    "prixDevis":255000
+    "prixDevis":421550,
+    "composants": [
+      {
+        "idComposant":1,
+        "quantite":300
+      },
+      {
+        "idComposant":3,
+        "quantite":600
+      },
+      {
+        "idComposant":5,
+        "quantite":3
+      },
+      {
+        "idComposant":7,
+        "quantite":600
+      },
+      {
+        "idComposant":9,
+        "quantite":25
+      },
+      {
+        "idComposant":11,
+        "quantite":600
+      },
+      {
+        "idComposant":12,
+        "quantite":600
+      }
+    ]
   },
   {
     "idDevis":2,
