@@ -8,7 +8,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <form (submit)="submitDevis()">
+  <form (submit)="addDevis()">
     <ion-item>
       <ion-label stacked>
         Nom du devis
@@ -27,17 +27,44 @@
       </ion-label>
       <ion-input type="text" name="nomClient" [(ngModel)]="newDevis.client.prenomClient"></ion-input>
     </ion-item>
-    <ion-item *ngFor="let item of nbComposants">
-      <ion-label stacked>
-        Composantss {{item.nb}}
-      </ion-label>
-      <span></span>
-      <ion-select name="">
-        <ion-option *ngFor="let composant of composantList" (ionSelect)="addPrice(composant.prixComposant)">
-          {{ composant.nomComposant }}
-        </ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-row *ngFor="let item of nbComposants">
+        <ion-col col-md-6 col-sm-6 col-xs-12>
+          <ion-item>
+            <ion-label stacked>
+              Composants {{item.nb}}
+            </ion-label>
+            <span></span>
+            <ion-select name="">
+              <ion-option 
+                *ngFor="let composant of composantList" 
+                (ionSelect)="addComposantInDevis(composant, item)"
+                [selected]="composant.idComposant === item.composant.idComposant"
+              >
+                {{ composant.nomComposant }}
+              </ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-md-4 col-sm-4 col-xs-10>
+          <ion-item>
+            <ion-label stacked>
+              Quantité
+            </ion-label>
+            <ion-input 
+              name="{{'quantiteComposant'+item.nb}}"
+              [(ngModel)]="item.composant.quantite" 
+              type="number"
+              (ionChange)="changePrice()"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-md-2 col-sm-2 col-xs-2>
+          <button ion-button icon-only type="button" (tap)="deleteComposant(item)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+  
     <button ion-button type="button" (tap)="addComposant()">+</button>
     <ion-item>
       <ion-label>Prix : {{newDevis.prixDevis }} €</ion-label>
