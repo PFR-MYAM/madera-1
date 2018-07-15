@@ -13,6 +13,7 @@
     "dateDevis":"2018-03-07",
     "etatDevis":"En attente",
     "prixDevis":420300,
+    "paiementDevis": 50,
     "composants": [
       {
         "idComposant":1,
@@ -57,6 +58,7 @@
     },
     "dateDevis":"2018-03-07",
     "etatDevis":"Validé",
-    "prixDevis":256050
+    "prixDevis":256050,
+    "paiementDevis": 50
   }
 ]

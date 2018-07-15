@@ -14,5 +14,13 @@
     "firstname":"Jean",
     "lastname":"DUPOND",
     "role":"com"
+  },
+  {
+    "id": 3,
+    "login":"compt1",
+    "password":"compt1",
+    "firstname":"Jean",
+    "lastname":"DUPOND",
+    "role":"compt"
   }
 ]

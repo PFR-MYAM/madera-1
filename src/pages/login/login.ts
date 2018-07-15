@@ -5,6 +5,7 @@ import { UserProvider} from "../../providers/user/user";
 
 import { DevisListPage } from "../devis-list/devis-list";
 import { ComposantsListPage } from "../composants-list/composants-list";
+import { DevisListComptablePage } from "../devis-list-comptable/devis-list-comptable";
 
 @Component({
   selector: 'page-login',
@@ -32,8 +33,10 @@ export class LoginPage {
       if(user.role === "com") {
         this.navCtrl.setRoot(DevisListPage);
       } else if(user.role === "be") {
-        this.navCtrl.setRoot(ComposantsListPage);
-      }    
+        this.navCtrl.setRoot(ComposantsListPage);  
+      } else if(user.role === "compt") {
+        this.navCtrl.setRoot(DevisListComptablePage);
+      }      
       else {
         this.toastError('Connexion non autorisée');
         this.errorLogin = true;

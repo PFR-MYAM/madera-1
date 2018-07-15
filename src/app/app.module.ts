@@ -14,6 +14,8 @@ import { DevisDetailPage } from "../pages/devis-detail/devis-detail";
 import { ComposantsListPage } from "../pages/composants-list/composants-list";
 import { ComposantFormPage } from "../pages/composant-form/composant-form";
 import { ComposantDetailPage } from "../pages/composant-detail/composant-detail";
+import { DevisListComptablePage } from "../pages/devis-list-comptable/devis-list-comptable";
+import { DevisDetailComptablePage} from "../pages/devis-detail-comptable/devis-detail-comptable";
 
 import { UserProvider } from '../providers/user/user';
 import { DevisProvider } from '../providers/devis/devis';
@@ -28,7 +30,9 @@ import { ComposantProvider } from '../providers/composant/composant';
     DevisDetailPage,
     ComposantsListPage,
     ComposantFormPage,
-    ComposantDetailPage
+    ComposantDetailPage,
+    DevisListComptablePage,
+    DevisDetailComptablePage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,9 @@ import { ComposantProvider } from '../providers/composant/composant';
     DevisDetailPage,
     ComposantsListPage,
     ComposantFormPage,
-    ComposantDetailPage
+    ComposantDetailPage,
+    DevisListComptablePage,
+    DevisDetailComptablePage
   ],
   providers: [
     StatusBar,
