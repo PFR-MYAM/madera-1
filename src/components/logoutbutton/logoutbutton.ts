@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { UserProvider } from '../../providers/user/user';
+import { NavController } from 'ionic-angular/umd';
+import { LoginPage } from '../../pages/login/login';
 
 @Component({
   selector: 'logoutbutton',
   templateUrl: 'logoutbutton.html'
 })
 export class LogoutbuttonComponent {
-  constructor(private userServ: UserProvider) {
+  constructor(public navCtrl: NavController) {
   }
 
   logout() {
-    this.userServ.logout();
+    this.navCtrl.setRoot(LoginPage);
   }
 }
