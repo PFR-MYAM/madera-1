@@ -34,7 +34,7 @@ import { ComposantProvider } from '../providers/composant/composant';
     ComposantFormPage,
     ComposantDetailPage,
     DevisListComptablePage,
-    DevisDetailComptablePage
+    DevisDetailComptablePage,
 
     LogoutbuttonComponent
   ],
