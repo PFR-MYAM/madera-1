@@ -90,7 +90,6 @@ export class DevisDetailPage {
         let composant = c;
         return composant.idComposant == v.composant.idComposant;
       });
-      console.log(this.devis.prixDevis, composant);
       this.devis.prixDevis = this.devis.prixDevis + (composant.prixComposant * v.composant.quantite);
     }, this);
   }

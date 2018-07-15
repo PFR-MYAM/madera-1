@@ -17,6 +17,8 @@ import { ComposantDetailPage } from "../pages/composant-detail/composant-detail"
 import { DevisListComptablePage } from "../pages/devis-list-comptable/devis-list-comptable";
 import { DevisDetailComptablePage} from "../pages/devis-detail-comptable/devis-detail-comptable";
 
+import { LogoutbuttonComponent } from '../components/logoutbutton/logoutbutton';
+
 import { UserProvider } from '../providers/user/user';
 import { DevisProvider } from '../providers/devis/devis';
 import { ComposantProvider } from '../providers/composant/composant';
@@ -33,6 +35,8 @@ import { ComposantProvider } from '../providers/composant/composant';
     ComposantDetailPage,
     DevisListComptablePage,
     DevisDetailComptablePage
+
+    LogoutbuttonComponent
   ],
   imports: [
     BrowserModule,

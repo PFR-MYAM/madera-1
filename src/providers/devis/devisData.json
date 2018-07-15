@@ -59,6 +59,35 @@
     "dateDevis":"2018-03-07",
     "etatDevis":"Validé",
     "prixDevis":256050,
-    "paiementDevis": 50
+    "composants": [
+      {
+        "idComposant":2,
+        "quantite":400
+      },
+      {
+        "idComposant":4,
+        "quantite":800
+      },
+      {
+        "idComposant":6,
+        "quantite":2
+      },
+      {
+        "idComposant":8,
+        "quantite":800
+      },
+      {
+        "idComposant":10,
+        "quantite":30
+      },
+      {
+        "idComposant":11,
+        "quantite":800
+      },
+      {
+        "idComposant":13,
+        "quantite":800
+      }
+    ]
   }
 ]

@@ -15,7 +15,10 @@ export class DevisListPage {
   devisFormPage = DevisFormPage;
   devisDetailPage = DevisDetailPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public devisServ: DevisProvider, public events: Events) {
+  constructor(
+    public navCtrl: NavController, public navParams: NavParams, public devisServ: DevisProvider, 
+    public events: Events
+  ) {
     this.events.subscribe('devis:added', (devis) => {
       this.allDevis.push(devis);
     });
