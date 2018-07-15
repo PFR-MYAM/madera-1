@@ -9,14 +9,14 @@
 	{
 		"idComposant":2,
 		"nomComposant":"Toiture bois de chêne 1m2",
-		"gammeComposant":"bon marché",
+		"gammeComposant":"basse",
 		"fournisseurComposant":"Chêne d'acier",
 		"prixComposant": 112
 	},
 	{
 		"idComposant":3,
 		"nomComposant":"Mur extérieur bois de hêtre 1m2",
-		"gammeComposant":"bon marché",
+		"gammeComposant":"basse",
 		"fournisseurComposant":"Hêtre ou ne pas hêtre",
 		"prixComposant": 450
 	},
@@ -30,21 +30,21 @@
 	{
 		"idComposant":5,
 		"nomComposant":"Escalier bois de hêtre",
-		"gammeComposant":"bon marché",
+		"gammeComposant":"basse",
 		"fournisseurComposant":"Hêtre ou ne pas hêtre",
 		"prixComposant": 1000
 	},
 	{
 		"idComposant":6,
 		"nomComposant":"Escalier bois de chêne",
-		"gammeComposant":"luxe",
+		"gammeComposant":"haute",
 		"fournisseurComposant":"Chêne d'acier",
 		"prixComposant": 950
 	},
 	{
 		"idComposant":7,
 		"nomComposant":"Lattes parquet hêtre 1m2",
-		"gammeComposant":"luxe",
+		"gammeComposant":"haute",
 		"fournisseurComposant":"Hêtre ou ne pas hêtre",
 		"prixComposant":75
 	},
@@ -58,7 +58,7 @@
 	{
 		"idComposant":9,
 		"nomComposant":"Mur intérieur hêtre 1m2",
-		"gammeComposant":"bon marché",
+		"gammeComposant":"basse",
 		"fournisseurComposant":"Hêtre ou ne pas hêtre",
 		"prixComposant":300
 	},
@@ -72,7 +72,7 @@
 	{
 		"idComposant":11,
 		"nomComposant":"Isolant thermique naturelle 1m2",
-		"gammeComposant":"luxe",
+		"gammeComposant":"haute",
 		"fournisseurComposant":"Naturellement votre",
 		"prixComposant":19
 	},
@@ -86,7 +86,7 @@
 	{
 		"idComposant":13,
 		"nomComposant":"Fondation chêne 1m2",
-		"gammeComposant":"bon marché",
+		"gammeComposant":"basse",
 		"fournisseurComposant":"Chêne d'acier",
 		"prixComposant":78
 	}
