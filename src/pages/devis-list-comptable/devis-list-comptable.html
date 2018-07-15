@@ -21,24 +21,26 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let devis of allDevis">
-        <td>{{devis.idDevis}}</td>
-        <td>{{devis.nomDevis}}</td>
-        <td>{{devis.client.nomClient}} {{devis.client.prenomClient}}</td>
-        <td>{{devis.etatDevis}}</td>
-        <td>{{devis.prixDevis}} €</td>
-        <td>
-          <ion-range min="0" max="100" pin="true" [(ngModel)]="devis.paiementDevis" color="secondary">
-            <ion-label range-left>0</ion-label>
-            <ion-label range-right>100</ion-label>
-          </ion-range>
-        </td>
-        <td>
-          <button ion-button type="button" [navPush]="DevisDetailComptablePage" [navParams]="{idDevis:devis.idDevis}">
-            <ion-icon name="brush"></ion-icon>
-          </button>
-        </td>
-      </tr>
+      <ng-container *ngFor="let devis of allDevis">
+        <tr *ngIf="devis.etatDevis == 'Validé'">
+          <td>{{devis.idDevis}}</td>
+          <td>{{devis.nomDevis}}</td>
+          <td>{{devis.client.nomClient}} {{devis.client.prenomClient}}</td>
+          <td>{{devis.etatDevis}}</td>
+          <td>{{devis.prixDevis}} €</td>
+          <td>
+            <ion-range min="0" max="{{devis.prixDevis}}" pin="true" [(ngModel)]="devis.paiementDevis" color="primary">
+              <ion-label range-left>0</ion-label>
+              <ion-label range-right>{{devis.prixDevis}}</ion-label>
+            </ion-range>
+          </td>
+          <td>
+            <button ion-button type="button" [navPush]="DevisDetailComptablePage" [navParams]="{idDevis:devis.idDevis}">
+              <ion-icon name="brush"></ion-icon>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
   <ion-card *ngIf="allDevis.length === 0">
