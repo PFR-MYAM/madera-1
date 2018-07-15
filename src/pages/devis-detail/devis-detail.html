@@ -19,31 +19,31 @@
       <ion-label stacked>
         Nom du client
       </ion-label>
-      <ion-input type="text" name="nomClient" [(ngModel)]="devis.client.nomClient"></ion-input>
+      <ion-input type="text" name="nomClient" [(ngModel)]="client.nomClient" (ionInput)="getExistClient($event)"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>
         Prénom du client
       </ion-label>
-      <ion-input type="text" name="prenomClient" [(ngModel)]="devis.client.prenomClient"></ion-input>
+      <ion-input type="text" name="prenomClient" [(ngModel)]="client.prenomClient"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>
         Adresse du client
       </ion-label>
-      <ion-input type="text" name="adrClient" [(ngModel)]="devis.client.adrClient"></ion-input>
+      <ion-input type="text" name="adrClient" [(ngModel)]="client.adrClient"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>
         Téléphone du client
       </ion-label>
-      <ion-input type="text" name="telClient" [(ngModel)]="devis.client.telClient"></ion-input>
+      <ion-input type="text" name="telClient" [(ngModel)]="client.telClient"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>
         Email du client
       </ion-label>
-      <ion-input type="text" name="emailClient" [(ngModel)]="devis.client.emailClient"></ion-input>
+      <ion-input type="text" name="emailClient" [(ngModel)]="client.emailClient"></ion-input>
     </ion-item>
     <ion-row *ngFor="let item of composantsDevis">
       <ion-col col-md-6 col-sm-6 col-xs-12>
