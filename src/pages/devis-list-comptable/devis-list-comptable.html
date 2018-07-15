@@ -23,7 +23,12 @@
         <td>{{devis.client.nomClient}} {{devis.client.prenomClient}}</td>
         <td>{{devis.etatDevis}}</td>
         <td>{{devis.prixDevis}} €</td>
-        <td>{{devis.paiementDevis}}</td>
+        <td>
+          <ion-range min="0" max="100" pin="true" [(ngModel)]="devis.paiementDevis" color="secondary">
+            <ion-label range-left>0</ion-label>
+            <ion-label range-right>100</ion-label>
+          </ion-range>
+        </td>
         <td>
           <button ion-button type="button" [navPush]="DevisDetailComptablePage" [navParams]="{idDevis:devis.idDevis}">
             <ion-icon name="brush"></ion-icon>
