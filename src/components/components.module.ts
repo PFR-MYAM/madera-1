@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { LogoutbuttonComponent } from './logoutbutton/logoutbutton';
+
+import { LogoutButton } from './logout-button/logout-button';
 @NgModule({
-	declarations: [LogoutbuttonComponent],
+	declarations: [LogoutButton],
 	imports: [],
-	exports: [LogoutbuttonComponent]
+	exports: [LogoutButton]
 })
 export class ComponentsModule {}
