@@ -25,7 +25,11 @@
       <ion-label stacked>
         Gamme du composant
       </ion-label>
-      <ion-input type="text" name="gammeComposant" [(ngModel)]="newComposant.gammeComposant"></ion-input>
+      <ion-select name="Gamme">
+        <ion-option *ngFor="let gamme of gammeList">
+          {{ gamme }}
+        </ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label stacked>

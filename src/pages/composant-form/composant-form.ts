@@ -17,6 +17,8 @@ export class ComposantFormPage {
     prixComposant: ''
   };
 
+  gammeList = ['basse','moyenne','haute'];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events, public composantService: ComposantProvider) {
     this.newComposant.idComposant = navParams.get('idComposant');
   }
