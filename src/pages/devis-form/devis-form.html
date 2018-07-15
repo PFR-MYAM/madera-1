@@ -19,13 +19,21 @@
       <ion-label stacked>
         Nom du client
       </ion-label>
-      <ion-input type="text" name="nomClient" [(ngModel)]="newDevis.client.nomClient"></ion-input>
+      <ion-input type="text" name="nomClient" [(ngModel)]="client.nomClient"></ion-input>
     </ion-item>
+    <ion-list *ngIf="listSearchClient.length > 0">
+      <button ion-item *ngFor="let c of listSearchClient" (tap)="selectClient(c)">
+        {{c.nomClient}} {{c.prenomClient}}
+      </button>
+    </ion-list>
+    <button ion-button type="button" (tap)="createNewClient()" *ngIf="listSearchClient.length===0">
+      Créer un nouveau client
+    </button>
     <ion-item>
       <ion-label stacked>
         Prénom du client
       </ion-label>
-      <ion-input type="text" name="nomClient" [(ngModel)]="newDevis.client.prenomClient"></ion-input>
+      <ion-input type="text" name="nomClient" [(ngModel)]="client.prenomClient"></ion-input>
     </ion-item>
     <ion-row *ngFor="let item of nbComposants">
         <ion-col col-md-6 col-sm-6 col-xs-12>

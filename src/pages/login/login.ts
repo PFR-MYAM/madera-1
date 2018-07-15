@@ -30,11 +30,11 @@ export class LoginPage {
   doLogin() {
     this.usrService.login(this.credentials).then((res) => {
       let user: any = res;
-      if(user.role === "com") {
+      if(user.idRole === "com") {
         this.navCtrl.setRoot(DevisListPage);
-      } else if(user.role === "be") {
+      } else if(user.idRole === "be") {
         this.navCtrl.setRoot(ComposantsListPage);  
-      } else if(user.role === "compt") {
+      } else if(user.idRole === "compt") {
         this.navCtrl.setRoot(DevisListComptablePage);
       }      
       else {

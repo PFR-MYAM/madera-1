@@ -34,8 +34,8 @@ export class ComposantsListPage {
   }
 
   delete(idComposant) {
-    console.log(idComposant);
-    idComposant = idComposant-1;
-    this.composantServ.deleteComposant(idComposant);
+    this.composantServ.deleteComposant(idComposant).then((res) => {
+      this.getAll();
+    });
   }
 }

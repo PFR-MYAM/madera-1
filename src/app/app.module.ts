@@ -22,6 +22,11 @@ import { LogoutButton } from '../components/logout-button/logout-button';
 import { UserProvider } from '../providers/user/user';
 import { DevisProvider } from '../providers/devis/devis';
 import { ComposantProvider } from '../providers/composant/composant';
+import { FournisseurProvider } from '../providers/fournisseur/fournisseur';
+import { GammeProvider } from '../providers/gamme/gamme';
+import { ApiProvider } from '../providers/api/api';
+import { ClientProvider } from '../providers/client/client';
+import { ClientFormPage } from '../pages/client-form/client-form';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,7 @@ import { ComposantProvider } from '../providers/composant/composant';
     ComposantDetailPage,
     DevisListComptablePage,
     DevisDetailComptablePage,
+    ClientFormPage,
 
     LogoutButton
 
@@ -55,7 +61,8 @@ import { ComposantProvider } from '../providers/composant/composant';
     ComposantFormPage,
     ComposantDetailPage,
     DevisListComptablePage,
-    DevisDetailComptablePage
+    DevisDetailComptablePage,
+    ClientFormPage
   ],
   providers: [
     StatusBar,
@@ -63,7 +70,11 @@ import { ComposantProvider } from '../providers/composant/composant';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
     DevisProvider,
-    ComposantProvider
+    ComposantProvider,
+    FournisseurProvider,
+    GammeProvider,
+    ApiProvider,
+    ClientProvider
   ]
 })
 export class AppModule {}

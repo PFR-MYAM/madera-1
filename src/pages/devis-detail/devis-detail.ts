@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Events } from 'ionic-angular';
+import { NavController, NavParams, Events, ModalController } from 'ionic-angular';
 
 import moment from 'moment';
 import 'moment/locale/fr';
@@ -7,6 +7,8 @@ import _ from 'underscore';
 
 import {DevisProvider} from "../../providers/devis/devis";
 import {ComposantProvider} from "../../providers/composant/composant"
+import { ClientProvider } from '../../providers/client/client';
+import { ClientFormPage } from '../client-form/client-form';
 
 @Component({
   selector: 'page-devis-detail',
@@ -18,10 +20,7 @@ export class DevisDetailPage {
   devis: any = {
     idDevis: 0,
     nomDevis: '',
-    client: {
-      nomClient: '',
-      prenomClient:''
-    },
+    idClient: 0,
     dateDevis: moment().format('YYYY-MM-DD'),
     etatDevis: 'En attente',
     prixDevis: 0
@@ -29,9 +28,13 @@ export class DevisDetailPage {
   composantsDevis: any = [];
   composantList: any = [];
 
+  listSearchClient: any = [];
+  client: any = {};
+
   constructor(
     public navCtrl: NavController, public navParams: NavParams, public events: Events, 
-    public devisService: DevisProvider, public composantService: ComposantProvider
+    public devisService: DevisProvider, public composantService: ComposantProvider,
+    public clientServ: ClientProvider, public modalCtrl: ModalController
   ) {
     this.devis.idDevis = navParams.get('idDevis');
     this.getAllComposant();
@@ -40,6 +43,30 @@ export class DevisDetailPage {
   ionViewDidLoad() {
     this.getDevis(this.devis.idDevis);
   }
+
+  getExistClient(ev: any) {
+    this.clientServ.getForName(this.client.nomClient).then((res) => {
+      this.listSearchClient = res;
+    }, (err) => {
+      console.log(err);
+    });
+  }
+
+  selectClient(c) {
+    this.listSearchClient = [];
+    this.client = c;
+  }
+
+  createNewClient() {
+    let modal = this.modalCtrl.create(ClientFormPage);
+
+    modal.onDidDismiss(data => {
+      this.client = data;
+    });
+ 
+    modal.present();
+  }
+
 
   getAllComposant() {
     this.composantService.getAll().then((res) => {
@@ -53,9 +80,18 @@ export class DevisDetailPage {
     this.devisService.getOne(idDevis).then((res) => {
       this.devis = res;
       this.getComposantDevis();
+      this.getClient();
     }, (err) => {
       console.log(err);
     });
+  }
+
+  getClient() {
+    this.clientServ.getOne(this.devis.idClient).then((res) => {
+      this.client = res;
+    }, (err) => {
+      console.log(err);
+    })
   }
 
   getComposantDevis() {
@@ -130,6 +166,7 @@ export class DevisDetailPage {
       let composant = v.composant;
       this.devis.composants.push(composant);
     }, this);
+    this.devis.idClient = this.client.idClient;
     this.devisService.updateDevis(this.devis);
     this.navCtrl.pop();
   }

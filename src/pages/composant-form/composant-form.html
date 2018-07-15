@@ -25,8 +25,8 @@
       <ion-label stacked>
         Gamme du composant
       </ion-label>
-      <ion-select name="Gamme">
-        <ion-option *ngFor="let gamme of gammeType">
+      <ion-select name="Gamme" [(ngModel)]="newComposant.idGamme">
+        <ion-option *ngFor="let gamme of gammeList" [value]="gamme.idGamme">
           {{ gamme }}
         </ion-option>
       </ion-select>
@@ -35,7 +35,11 @@
       <ion-label stacked>
         Fournisseur du composant
       </ion-label>
-      <ion-input type="text" name="fournisseurComposant" [(ngModel)]="newComposant.fournisseurComposant"></ion-input>
+      <ion-select name="Fournisseur" [(ngModel)]="newComposant.idFournisseur">
+        <ion-option *ngFor="let f of fournisseursList" [value]="f.idFournisseur">
+          {{ gamme }}
+        </ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label stacked>

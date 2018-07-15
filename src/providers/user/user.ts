@@ -1,33 +1,23 @@
 import { Injectable } from '@angular/core';
 
-import _ from 'underscore';
-
-declare function require(name:string);
-
-let usersData = require('./userModel.json');
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ApiProvider } from '../api/api';
 
 @Injectable()
 export class UserProvider {
 
-  constructor() {}
+  constructor(public http: HttpClient, public api: ApiProvider) {}
 
   login(credentials) {
     return new Promise((resolve, reject) => {
-
-      let user: any = _.find(usersData, function (u) {
-        let usr: any = u;
-        return usr.login === credentials.login;
-      });
-
-      if(user && (typeof user != 'undefined')) {
-        if(user.password === credentials.password){
-          resolve(user);
-        } else {
-          reject({status:401, message: 'Unauthorize'});
-        }
-      } else {
-        reject({status:401, message: 'Unauthorize'});
-      }
-    })
+      let url = '/login';
+      let headers = new HttpHeaders().set('Content-type','application/json');
+      this.http.post(this.api.buildPath(url), JSON.stringify(credentials), {headers: headers})
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
   }
 }
