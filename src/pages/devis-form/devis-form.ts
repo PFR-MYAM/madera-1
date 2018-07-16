@@ -16,7 +16,6 @@ import { ClientFormPage } from '../client-form/client-form';
 export class DevisFormPage {
   
   newDevis: any = {
-    idDevis: 0,
     nomDevis: '',
     idClient: 0,
     dateDevis: moment().format('YYYY-MM-DD'),
@@ -48,7 +47,6 @@ export class DevisFormPage {
     public devisService: DevisProvider, public composantService: ComposantProvider,
     public clientServ: ClientProvider, public modalCtrl: ModalController
   ) {
-    this.newDevis.idDevis = navParams.get('idDevis');
   }
 
   ionViewDidLoad() {

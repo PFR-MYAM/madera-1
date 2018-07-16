@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <button ion-button type="button" [navPush]="devisFormPage" [navParams]="{idDevis:allDevis.length + 1}">Ajouter un devis</button>
+  <button ion-button type="button" [navPush]="devisFormPage">Ajouter un devis</button>
   <table *ngIf="allDevis.length > 0">
     <thead>
       <tr>
