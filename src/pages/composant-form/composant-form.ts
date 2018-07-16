@@ -12,10 +12,9 @@ import { FournisseurProvider } from '../../providers/fournisseur/fournisseur';
 export class ComposantFormPage {
 
   newComposant: any = {
-    idComposant: 0,
     nomComposant: '',
-    gammeComposant: '',
-    fournisseurComposant: '',
+    idGamme: 0,
+    idFournisseur: 0,
     prixComposant: ''
   };
 
@@ -27,7 +26,6 @@ export class ComposantFormPage {
     public composantService: ComposantProvider, public gammeServ: GammeProvider, 
     public fournisseurServ: FournisseurProvider
   ) {
-    this.newComposant.idComposant = navParams.get('idComposant');
     this.getGammes();
     this.getFournisseurs();
   }

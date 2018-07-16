@@ -17,7 +17,7 @@
 </ion-header>
 
 <ion-content padding>
-    <button ion-button type="button" [navPush]="composantFormPage" [navParams]="{idComposant:allComposant.length + 1}">Ajouter un composant</button>
+    <button ion-button type="button" [navPush]="composantFormPage">Ajouter un composant</button>
   <table *ngIf="allComposant.length > 0">
     <thead>
       <tr>
