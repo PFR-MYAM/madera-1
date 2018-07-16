@@ -24,7 +24,10 @@
         <td>{{devis.idDevis}}</td>
         <td>{{devis.nomDevis}}</td>
         <td>{{devis.client.nomClient}} {{devis.client.prenomClient}}</td>
-        <td>{{devis.etatDevis}}</td>
+        <td>
+          <span *ngIf="devis.etatDevis === 0">En attente</span>
+          <span *ngIf="devis.etatDevis === 1">Validé</span>
+        </td>
         <td>{{devis.prixDevis}} €</td>
         <td>
           <button *ngIf="devis.etatDevis != 'Validé'" ion-button type="button" icon-only (tap)="devis.etatDevis = 'Validé'">
