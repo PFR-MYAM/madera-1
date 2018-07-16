@@ -19,7 +19,7 @@
       <ion-label stacked>
         Nom du client
       </ion-label>
-      <ion-input type="text" name="nomClient" [(ngModel)]="client.nomClient" (ionInput)="getExistClient($event)"></ion-input>
+      <ion-input type="text" name="nomClient" [(ngModel)]="client.nomClient"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>
@@ -27,6 +27,9 @@
       </ion-label>
       <ion-input type="text" name="prenomClient" [(ngModel)]="client.prenomClient"></ion-input>
     </ion-item>
+    <button ion-button type="button" (tap)="createNewClient()" *ngIf="listSearchClient.length===0">
+      Créer un nouveau client
+    </button>
     <ion-item>
       <ion-label stacked>
         Adresse du client
