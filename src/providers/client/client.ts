@@ -26,6 +26,17 @@ export class ClientProvider {
     });
   }
 
+  getAll() {
+    return new Promise((resolve, reject) => {
+      let url = '/clients';
+      this.http.get(this.api.buildPath(url), {}).subscribe(res => {
+        resolve(res);
+      }, (err) => {
+        reject(err);
+      });
+    });
+  }
+
   getOne(idClient) {
     return new Promise((resolve, reject) => {
       let url = '/clients/'+idClient;
